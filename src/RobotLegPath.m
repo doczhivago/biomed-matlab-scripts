@@ -3,7 +3,6 @@
 % This has given me some insight into joint angles needed to control the legs. 
 % Matlab Code for Inverse Dynamics
 
-
 disp('Joint angles from (0,2) to (2,0) at Constant velocity')
 xx=0:.1:2;
 yy=-xx+2;
@@ -24,8 +23,8 @@ plotToolPath(xx,yy,xx1,yy1,13)
 function [theta1, theta2, x1, x2]=theta12(x,y)
     a1=1;a2=1;
     D=(x^2+y^2-a1^2-a2^2)/(2*a1*a2);
-    theta2=atan2(sqrt(1-D^2),(D)); %eq 1.7
-    theta1=atan2(y,x)-atan2((a2*sin(theta2)),(a1+a2*cos(theta2))); %eq 1.8
+    theta2=atan2(sqrt(1-D^2),(D)); 
+    theta1=atan2(y,x)-atan2((a2*sin(theta2)),(a1+a2*cos(theta2)));
     x1=a1*cos(theta1);
     x2=a1*sin(theta1);
 end
